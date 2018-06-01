@@ -54,6 +54,8 @@ public class RomanNumerals {
     /**
      * Converts a number to a Roman numeral in lower case.
      *
+     * @param number the number to convert.
+     * @return the roman numeral version of number in lower case.
      * @throws IllegalArgumentException if the parameter is zero.
      */
     public static String toString(int number) {

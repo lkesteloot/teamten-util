@@ -41,6 +41,10 @@ public class Files {
 
     /**
      * Returns a list of lines from the file. Newlines are not included.
+     *
+     * @param file the file to read.
+     * @return a list of lines, without newlines.
+     * @throws IOException if an exception occurs while reading the file.
      */
     public static List<String> readLines(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));

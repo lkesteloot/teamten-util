@@ -33,7 +33,11 @@ public class CodePoints {
     }
 
     /**
-     * Return the next code point in the reader, or -1 on end of file.
+     * Reads code points from a reader.
+     *
+     * @param reader the reader to read from.
+     * @return the next code point in the reader, or -1 on end of file.
+     * @throws IOException if the reader throws it.
      */
     public static int nextCodePoint(Reader reader) throws IOException {
         int ch = reader.read();
@@ -53,6 +57,9 @@ public class CodePoints {
     /**
      * Simple routine to convert a single code point to a string, because surprisingly this isn't a thing
      * in the standard library.
+     *
+     * @param codePoint the code point to convert to a string.
+     * @return the string version of the code point.
      */
     public static String toString(int codePoint) {
         int[] codePoints = new int[1];

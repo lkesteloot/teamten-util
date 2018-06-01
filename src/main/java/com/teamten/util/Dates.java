@@ -39,6 +39,9 @@ public class Dates {
     /**
      * Returns a minutes:seconds string for this duration if less than an hour,
      * or hour:minutes:seconds if an hour or more.
+     *
+     * @param ms the duration in milliseconds.
+     * @return the string version of the duration.
      */
     public static String durationToString(long ms) {
         long seconds = ms / MS_PER_S;

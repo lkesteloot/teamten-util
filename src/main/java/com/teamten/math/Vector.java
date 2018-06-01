@@ -50,6 +50,9 @@ public class Vector {
 
     /**
      * Public factory that copies its input array.
+     *
+     * @param values the values of the new vector.
+     * @return a Vector of the passed-in values.
      */
     public static Vector make(double ... values) {
         double[] copiedValues = Arrays.copyOf(values, values.length);
@@ -58,14 +61,21 @@ public class Vector {
     }
 
     /**
-     * Returns the element at index (zero-based) without checking bounds.
+     * Gets an element.
+     *
+     * @param index the index (zero-based) to look up.
+     * @return the element at index.
      */
     public double get(int index) {
         return mValues[index];
     }
 
     /**
-     * Returns a new vector with the specified element replaced.
+     * Replaces one item of the vector. Does not change this object.
+     *
+     * @param index the index to replace.
+     * @param value the new value at index.
+     * @return a new vector with the specified element replaced.
      */
     public Vector with(int index, double value) {
         double[] copiedValues = Arrays.copyOf(mValues, mValues.length);
@@ -75,14 +85,18 @@ public class Vector {
     }
 
     /**
-     * Return the number of elements.
+     * Get the number of elements.
+     *
+     * @return the number of elements.
      */
     public int getSize() {
         return mValues.length;
     }
 
     /**
-     * Return the negated vector (-v) of this.
+     * Negates this vector.
+     *
+     * @return the negated vector (-v) of this.
      */
     public Vector negate() {
         double[] newValues = new double[mValues.length];
@@ -95,7 +109,11 @@ public class Vector {
     }
 
     /**
-     * Return the sum of this and other.
+     * Adds two vectors.
+     *
+     * @param other the vector to add.
+     * @return the sum of this and other.
+     * @throws IllegalArgumentException if the vectors don't have the same length.
      */
     public Vector add(Vector other) {
         assertSameLength(other);
@@ -110,7 +128,11 @@ public class Vector {
     }
 
     /**
-     * Return the difference of this and other (this minus other).
+     * Subtracts two vectors.
+     *
+     * @param other the vector to subtract.
+     * @return the difference of this and other (this minus other).
+     * @throws IllegalArgumentException if the vectors don't have the same length.
      */
     public Vector subtract(Vector other) {
         assertSameLength(other);
@@ -125,7 +147,11 @@ public class Vector {
     }
 
     /**
-     * Return the dot product between this and other.
+     * Computes a dot product.
+     *
+     * @param other the vector to dot with.
+     * @return the dot product between this and other.
+     * @throws IllegalArgumentException if the vectors don't have the same length.
      */
     public double dot(Vector other) {
         assertSameLength(other);
@@ -140,8 +166,12 @@ public class Vector {
     }
 
     /**
-     * Return the cross product between this and other, following the
-     * right-hand rule.  The two vectors must be of length 3.
+     * Computes a cross product. The two vectors must be of length 3.
+     *
+     * @param other the vector to cross with.
+     * @return the cross product between this and other, following the
+     * right-hand rule.  
+     * @throws IllegalArgumentException if the vectors don't have length 3.
      */
     public Vector cross(Vector other) {
         assertSameLength(other);
@@ -158,7 +188,10 @@ public class Vector {
     }
 
     /**
-     * Return the product between this and a scalar.
+     * Multiplies a vector and a scalar.
+     *
+     * @param constant the scalar to multiply by.
+     * @return the product between this and a scalar.
      */
     public Vector multiply(double constant) {
         double[] product = new double[mValues.length];
@@ -171,8 +204,9 @@ public class Vector {
     }
 
     /**
-     * Return a normalized (length 1) version of this vector.
+     * Normalizes a vector.
      *
+     * @return a normalized (length 1) version of this vector.
      * @throws IllegalArgumentException if the vector has length 0.
      */
     public Vector normalize() {
@@ -191,7 +225,10 @@ public class Vector {
     }
 
     /**
-     * Return the length of this vector;
+     * Gets the length of the vector (square root of the sum of the squares of
+     * the elements).
+     *
+     * @return the length of this vector.
      */
     public double length() {
         // Cache the length.

@@ -33,6 +33,9 @@ public class Complex {
 
     /**
      * Creates an immutable complex number with the specified real and imaginary components.
+     *
+     * @param re the real part.
+     * @param im the imaginary part.
      */
     public Complex(double re, double im) {
         mRe = re;
@@ -42,6 +45,10 @@ public class Complex {
     /**
      * Creates a new complex number from the phasor (modulus and argument),
      * where: modulus*e^(argument*i) = modulus*(cos(argument) + i*sin(argument))
+     *
+     * @param modulus the distance from the origin.
+     * @param argument the angle around the origin in radians.
+     * @return new complex number from the phasor.
      */
     public static Complex fromPhasor(double modulus, double argument) {
         if (modulus < 0) {
@@ -55,6 +62,8 @@ public class Complex {
 
     /**
      * Returns the real part of this complex number.
+     *
+     * @return the real part of this complex number.
      */
     public double re() {
         return mRe;
@@ -62,6 +71,8 @@ public class Complex {
 
     /**
      * Returns the imaginary part of this complex number.
+     *
+     * @return the imaginary part of this complex number.
      */
     public double im() {
         return mIm;
@@ -70,6 +81,8 @@ public class Complex {
     /**
      * Returns the modulus of this complex number, i.e., the distance from
      * the number to the complex origin.
+     *
+     * @return the modulus of this complex number.
      */
     public double modulus() {
         return Math.hypot(mRe, mIm);
@@ -79,20 +92,28 @@ public class Complex {
      * Returns the argument of this complex number, i.e., the counterclockwise
      * angle around the complex origin starting at the positive real axis.
      * Always returns a value between -pi and pi.
+     *
+     * @return Returns the argument of this complex number.
      */
     public double argument() {
         return Math.atan2(mIm, mRe);
     }
 
     /**
-     * Returns the sum of this and the other complex number.
+     * Adds two complex numbers.
+     *
+     * @param other the complex number to add.
+     * @return the sum of this and the other complex number.
      */
     public Complex add(Complex other) {
         return new Complex(mRe + other.mRe, mIm + other.mIm);
     }
 
     /**
-     * Returns the difference of this and the other complex number,
+     * Subtracts two complex numbers.
+     *
+     * @param other the complex number to subtract.
+     * @return the difference of this and the other complex number,
      * in other words, this minus other.
      */
     public Complex subtract(Complex other) {
@@ -100,28 +121,37 @@ public class Complex {
     }
 
     /**
-     * Returns the negation of this number.
+     * Negates this complex number.
+     *
+     * @return the negation of this number.
      */
     public Complex negate() {
         return new Complex(-mRe, -mIm);
     }
 
     /**
-     * Returns the conjugate of this number (only imaginary part negated).
+     * Computes the conjugate.
+     *
+     * @return the conjugate of this number (only imaginary part negated).
      */
     public Complex conjugate() {
         return new Complex(mRe, -mIm);
     }
 
     /**
-     * Returns the reciprocal of this number.
+     * Computes the reciprocal.
+     *
+     * @return the reciprocal of this number.
      */
     public Complex reciprocal() {
         return fromPhasor(1 / modulus(), -argument());
     }
 
     /**
-     * Returns the product of this number and the other.
+     * Multiplies complex numbers.
+     *
+     * @param other the complex number to multiply by.
+     * @return the product of this number and the other.
      */
     public Complex multiply(Complex other) {
         return new Complex(mRe*other.mRe - mIm*other.mIm,
@@ -129,14 +159,20 @@ public class Complex {
     }
 
     /**
-     * Returns the product of this number and a scalar.
+     * Multiplies a complex number with a scalar.
+     *
+     * @param other the scalar number to multiply by.
+     * @return the product of this number and a scalar.
      */
     public Complex multiply(double other) {
         return new Complex(mRe*other, mIm*other);
     }
 
     /**
-     * Returns the quotient of this number and the other, in other
+     * Divides complex numbers.
+     *
+     * @param other the complex number to divide by.
+     * @return the quotient of this number and the other, in other
      * words, this divided by other.
      */
     public Complex divide(Complex other) {
@@ -144,14 +180,19 @@ public class Complex {
     }
 
     /**
-     * Returns the quotient of this number and a scalar.
+     * Divides a complex number by a scalar.
+     *
+     * @param other the scalar number to divide by.
+     * @return the quotient of this number and a scalar.
      */
     public Complex divide(double other) {
         return new Complex(mRe/other, mIm/other);
     }
 
     /**
-     * Returns e raised to this complex number.
+     * Exponentiates a complex number.
+     *
+     * @return e raised to this complex number.
      */
     public Complex exp() {
         // e^(re + im*i)
@@ -161,25 +202,33 @@ public class Complex {
     }
 
     /**
-     * Returns the log of this complex number.
+     * Computes the log of a complex number.
+     *
+     * @return the log of this complex number.
      */
     public Complex log() {
         return new Complex(Math.log(modulus()), argument());
     }
 
     /**
-     * Returns the principal Nth root of this number.
+     * Computes the principal root.
+     *
+     * @param n the number of roots.
+     * @return the principal Nth root of this number.
      */
-    public Complex root(int N) {
-        return pow(1.0 / N);
+    public Complex root(int n) {
+        return pow(1.0 / n);
     }
 
     /**
-     * Returns this number to the Nth power.
+     * Computes a power of a complex number.
+     *
+     * @param n the scalar to raise this complex number to.
+     * @return this number to the Nth power.
      */
-    public Complex pow(double N) {
+    public Complex pow(double n) {
         // x^y = e^(log (x^y))
         //     = e^(y*log x)
-        return log().multiply(N).exp();
+        return log().multiply(n).exp();
     }
 }

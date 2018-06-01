@@ -71,6 +71,11 @@ public class Matrix {
 
     /**
      * Public factory that copies its input array.
+     *
+     * @param values the values to use for the matrix in row-major format.
+     * @param rowCount the number of rows.
+     * @param columnCount the number of columns.
+     * @return a new matrix with a copy of the passed-in array.
      */
     public static Matrix make(double[] values, int rowCount, int columnCount) {
         double[] copiedValues = Arrays.copyOf(values, values.length);
@@ -94,6 +99,9 @@ public class Matrix {
 
     /**
      * Make a unit sizexsize matrix.
+     *
+     * @param size the size of the matrix.
+     * @return a unit matrix of size "size".
      */
     public static Matrix makeUnit(int size) {
         return new Matrix(makeUnitArray(size), size, size);
@@ -105,6 +113,11 @@ public class Matrix {
      * bottom-right element is 1. When a vector is transformed by
      * this matrix, the input vector will be considered to be in world
      * space, and the transformed vector will be in the basis space.
+     *
+     * @param x the 3-vector for the first row.
+     * @param y the 3-vector for the second row.
+     * @param z the 3-vector for the third row.
+     * @return a transformation matrix.
      */
     public static Matrix makeWithBasis(Vector x, Vector y, Vector z) {
         double[] values = makeUnitArray(4);
@@ -120,6 +133,9 @@ public class Matrix {
 
     /**
      * Make a 4x4 translation matrix with the given translation.
+     *
+     * @param t 3-vector for the translation.
+     * @return a translation matrix.
      */
     public static Matrix makeTranslation(Vector t) {
         double[] values = makeUnitArray(4);
@@ -133,6 +149,10 @@ public class Matrix {
 
     /**
      * Make a 4x4 matrix with the specified numbers in row-major order.
+     * Keeps a reference to the values.
+     *
+     * @param values the values in row-major order.
+     * @return a 4x4 matrix with the specified values.
      */
     public static Matrix make4x4(double... values) {
         if (values.length != 16) {
@@ -145,6 +165,10 @@ public class Matrix {
     /**
      * Returns the element at (row,column) (zero-based) without checking
      * bounds.
+     *
+     * @param row the row to look up.
+     * @param column the column to look up.
+     * @return the value at row and column.
      */
     public double get(int row, int column) {
         return mValues[row*mColumnCount + column];
@@ -152,6 +176,8 @@ public class Matrix {
 
     /**
      * Return the number of rows.
+     *
+     * @return the number of rows.
      */
     public int getRowCount() {
         return mRowCount;
@@ -159,13 +185,19 @@ public class Matrix {
 
     /**
      * Return the number of columns.
+     *
+     * @return the number of columns.
      */
     public int getColumnCount() {
         return mColumnCount;
     }
 
     /**
-     * Return the sum of this and other.
+     * Adds two matrices.
+     *
+     * @param other the matrix to add.
+     * @return the sum of this and other.
+     * @throws IllegalArgumentException if the matrices don't have the same size.
      */
     public Matrix add(Matrix other) {
         assertSameSize(other);
@@ -180,7 +212,11 @@ public class Matrix {
     }
 
     /**
-     * Return the difference of this and other (this minus other).
+     * Subtracts two matrices.
+     *
+     * @param other the matrix to subtract.
+     * @return the difference of this and other (this minus other).
+     * @throws IllegalArgumentException if the matrices don't have the same size.
      */
     public Matrix subtract(Matrix other) {
         assertSameSize(other);
@@ -195,7 +231,10 @@ public class Matrix {
     }
 
     /**
-     * Return the product between this and a scalar.
+     * Multiplies a matrix and a scalar.
+     *
+     * @param constant the scalar to multiply by.
+     * @return the product between this and a scalar.
      */
     public Matrix multiply(double constant) {
         double[] product = new double[mValues.length];
@@ -208,7 +247,12 @@ public class Matrix {
     }
 
     /**
-     * Return the product of the two matrixes (this times other).
+     * Multiplies two matrices.
+     *
+     * @param other the matrix to multiply by.
+     * @return the product of the two matrixes (this times other).
+     * @throws IllegalArgumentException if the number of columns of this matrix don't
+     * equal the number of rows of the other matrix.
      */
     public Matrix multiply(Matrix other) {
         if (mColumnCount != other.mRowCount) {
@@ -247,6 +291,10 @@ public class Matrix {
      * the same number of dimensions. The matrix must be square. It may have
      * the same size as the vectors, or be one larger, in which case a "1" is
      * added to the input vector and removed from the output vector.
+     *
+     * @param vector the vector to transform.
+     * @return the transformed vector.
+     * @throws IllegalArgumentException if this matrix is not square.
      */
     public Vector transform(Vector vector) {
         if (mRowCount != mColumnCount) {
@@ -298,6 +346,11 @@ public class Matrix {
     /**
      * Transforms a vector (rather than a point). Only the direction is
      * transformed.  Only works on 4x4 matrices and 3-size vectors.
+     *
+     * @param vector the vector to transform.
+     * @return the transformed vector.
+     * @throws IllegalArgumentException if this matrix isn't 4x4 or the vector isn't of
+     * length 3.
      */
     public Vector transformVector(Vector vector) {
         if (mRowCount != 4 || mColumnCount != 4 || vector.getSize() != 3) {
@@ -341,6 +394,9 @@ public class Matrix {
     /**
      * Returns a string like "|1,2,3|\n|4,5,6|\n|7,8,9|" with "indent" at the
      * front of each line and no newline at the end.
+     *
+     * @param indent string to indent each row.
+     * @return a string version of this matrix.
      */
     public String toString(String indent) {
         StringBuilder builder = new StringBuilder();
@@ -383,7 +439,10 @@ public class Matrix {
     }
 
     /**
-     * Returns the inverse of the matrix. Only works on 4x4 matrices.
+     * Inverts a matrix. Only works on 4x4 matrices.
+     *
+     * @return the inverse of the matrix.
+     * @throws IllegalArgumentException if this matrix isn't 4x4.
      */
     public Matrix getInverse() {
         if (getRowCount() != 4 || getColumnCount() != 4) {
@@ -429,7 +488,10 @@ public class Matrix {
     }
 
     /**
-     * Returns the determinant of the matrix. Must be a 4x4 matrix.
+     * Computes the determinant of the matrix.
+     *
+     * @return the determinant of the matrix. Must be a 4x4 matrix.
+     * @throws IllegalArgumentException if this matrix isn't 4x4.
      */
     public double getDeterminant() {
         if (getRowCount() != 4 || getColumnCount() != 4) {
