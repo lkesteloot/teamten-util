@@ -131,7 +131,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/util/CodePoints.html#nextCodePoint-java.io.Reader-">nextCodePoint</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)</code>
-<div class="block">Return the next code point in the reader, or -1 on end of file.</div>
+<div class="block">Reads code points from a reader.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -171,10 +171,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>nextCodePoint</h4>
 <pre>public static&nbsp;int&nbsp;nextCodePoint(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html?is-external=true" title="class or interface in java.io">Reader</a>&nbsp;reader)
                          throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Return the next code point in the reader, or -1 on end of file.</div>
+<div class="block">Reads code points from a reader.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>reader</code> - the reader to read from.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the next code point in the reader, or -1 on end of file.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if the reader throws it.</dd>
 </dl>
 </li>
 </ul>
@@ -187,6 +191,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString(int&nbsp;codePoint)</pre>
 <div class="block">Simple routine to convert a single code point to a string, because surprisingly this isn't a thing
  in the standard library.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>codePoint</code> - the code point to convert to a string.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the string version of the code point.</dd>
+</dl>
 </li>
 </ul>
 </li>

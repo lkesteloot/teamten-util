@@ -134,7 +134,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#add-com.teamten.math.Matrix-">add</a></span>(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</code>
-<div class="block">Return the sum of this and other.</div>
+<div class="block">Adds two matrices.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -154,13 +154,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#getDeterminant--">getDeterminant</a></span>()</code>
-<div class="block">Returns the determinant of the matrix.</div>
+<div class="block">Computes the determinant of the matrix.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#getInverse--">getInverse</a></span>()</code>
-<div class="block">Returns the inverse of the matrix.</div>
+<div class="block">Inverts a matrix.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -207,19 +207,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#multiply-double-">multiply</a></span>(double&nbsp;constant)</code>
-<div class="block">Return the product between this and a scalar.</div>
+<div class="block">Multiplies a matrix and a scalar.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#multiply-com.teamten.math.Matrix-">multiply</a></span>(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</code>
-<div class="block">Return the product of the two matrixes (this times other).</div>
+<div class="block">Multiplies two matrices.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Matrix.html#subtract-com.teamten.math.Matrix-">subtract</a></span>(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</code>
-<div class="block">Return the difference of this and other (this minus other).</div>
+<div class="block">Subtracts two matrices.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
@@ -280,6 +280,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                           int&nbsp;rowCount,
                           int&nbsp;columnCount)</pre>
 <div class="block">Public factory that copies its input array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>values</code> - the values to use for the matrix in row-major format.</dd>
+<dd><code>rowCount</code> - the number of rows.</dd>
+<dd><code>columnCount</code> - the number of columns.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new matrix with a copy of the passed-in array.</dd>
+</dl>
 </li>
 </ul>
 <a name="makeUnit-int-">
@@ -290,6 +298,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>makeUnit</h4>
 <pre>public static&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;makeUnit(int&nbsp;size)</pre>
 <div class="block">Make a unit sizexsize matrix.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>size</code> - the size of the matrix.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a unit matrix of size "size".</dd>
+</dl>
 </li>
 </ul>
 <a name="makeWithBasis-com.teamten.math.Vector-com.teamten.math.Vector-com.teamten.math.Vector-">
@@ -306,6 +320,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  bottom-right element is 1. When a vector is transformed by
  this matrix, the input vector will be considered to be in world
  space, and the transformed vector will be in the basis space.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - the 3-vector for the first row.</dd>
+<dd><code>y</code> - the 3-vector for the second row.</dd>
+<dd><code>z</code> - the 3-vector for the third row.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a transformation matrix.</dd>
+</dl>
 </li>
 </ul>
 <a name="makeTranslation-com.teamten.math.Vector-">
@@ -316,6 +338,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>makeTranslation</h4>
 <pre>public static&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;makeTranslation(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;t)</pre>
 <div class="block">Make a 4x4 translation matrix with the given translation.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>t</code> - 3-vector for the translation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a translation matrix.</dd>
+</dl>
 </li>
 </ul>
 <a name="make4x4-double...-">
@@ -325,7 +353,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>make4x4</h4>
 <pre>public static&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;make4x4(double...&nbsp;values)</pre>
-<div class="block">Make a 4x4 matrix with the specified numbers in row-major order.</div>
+<div class="block">Make a 4x4 matrix with the specified numbers in row-major order.
+ Keeps a reference to the values.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>values</code> - the values in row-major order.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a 4x4 matrix with the specified values.</dd>
+</dl>
 </li>
 </ul>
 <a name="get-int-int-">
@@ -338,6 +373,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                   int&nbsp;column)</pre>
 <div class="block">Returns the element at (row,column) (zero-based) without checking
  bounds.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>row</code> - the row to look up.</dd>
+<dd><code>column</code> - the column to look up.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the value at row and column.</dd>
+</dl>
 </li>
 </ul>
 <a name="getRowCount--">
@@ -348,6 +390,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>getRowCount</h4>
 <pre>public&nbsp;int&nbsp;getRowCount()</pre>
 <div class="block">Return the number of rows.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of rows.</dd>
+</dl>
 </li>
 </ul>
 <a name="getColumnCount--">
@@ -358,6 +404,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>getColumnCount</h4>
 <pre>public&nbsp;int&nbsp;getColumnCount()</pre>
 <div class="block">Return the number of columns.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of columns.</dd>
+</dl>
 </li>
 </ul>
 <a name="add-com.teamten.math.Matrix-">
@@ -367,7 +417,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>add</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;add(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</pre>
-<div class="block">Return the sum of this and other.</div>
+<div class="block">Adds two matrices.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the matrix to add.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the sum of this and other.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the matrices don't have the same size.</dd>
+</dl>
 </li>
 </ul>
 <a name="subtract-com.teamten.math.Matrix-">
@@ -377,7 +435,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>subtract</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;subtract(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</pre>
-<div class="block">Return the difference of this and other (this minus other).</div>
+<div class="block">Subtracts two matrices.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the matrix to subtract.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the difference of this and other (this minus other).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the matrices don't have the same size.</dd>
+</dl>
 </li>
 </ul>
 <a name="multiply-double-">
@@ -387,7 +453,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>multiply</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;multiply(double&nbsp;constant)</pre>
-<div class="block">Return the product between this and a scalar.</div>
+<div class="block">Multiplies a matrix and a scalar.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>constant</code> - the scalar to multiply by.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the product between this and a scalar.</dd>
+</dl>
 </li>
 </ul>
 <a name="multiply-com.teamten.math.Matrix-">
@@ -397,7 +469,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>multiply</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;multiply(<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;other)</pre>
-<div class="block">Return the product of the two matrixes (this times other).</div>
+<div class="block">Multiplies two matrices.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the matrix to multiply by.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the product of the two matrixes (this times other).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the number of columns of this matrix don't
+ equal the number of rows of the other matrix.</dd>
+</dl>
 </li>
 </ul>
 <a name="transform-com.teamten.math.Vector-">
@@ -412,6 +493,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  the same number of dimensions. The matrix must be square. It may have
  the same size as the vectors, or be one larger, in which case a "1" is
  added to the input vector and removed from the output vector.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vector</code> - the vector to transform.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed vector.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this matrix is not square.</dd>
+</dl>
 </li>
 </ul>
 <a name="transformVector-com.teamten.math.Vector-">
@@ -423,6 +512,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;transformVector(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;vector)</pre>
 <div class="block">Transforms a vector (rather than a point). Only the direction is
  transformed.  Only works on 4x4 matrices and 3-size vectors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>vector</code> - the vector to transform.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the transformed vector.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this matrix isn't 4x4 or the vector isn't of
+ length 3.</dd>
+</dl>
 </li>
 </ul>
 <a name="toString--">
@@ -449,6 +547,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indent)</pre>
 <div class="block">Returns a string like "|1,2,3|\n|4,5,6|\n|7,8,9|" with "indent" at the
  front of each line and no newline at the end.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>indent</code> - string to indent each row.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a string version of this matrix.</dd>
+</dl>
 </li>
 </ul>
 <a name="getInverse--">
@@ -458,7 +562,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getInverse</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Matrix.html" title="class in com.teamten.math">Matrix</a>&nbsp;getInverse()</pre>
-<div class="block">Returns the inverse of the matrix. Only works on 4x4 matrices.</div>
+<div class="block">Inverts a matrix. Only works on 4x4 matrices.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the inverse of the matrix.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this matrix isn't 4x4.</dd>
+</dl>
 </li>
 </ul>
 <a name="getDeterminant--">
@@ -468,7 +578,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getDeterminant</h4>
 <pre>public&nbsp;double&nbsp;getDeterminant()</pre>
-<div class="block">Returns the determinant of the matrix. Must be a 4x4 matrix.</div>
+<div class="block">Computes the determinant of the matrix.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the determinant of the matrix. Must be a 4x4 matrix.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if this matrix isn't 4x4.</dd>
+</dl>
 </li>
 </ul>
 </li>

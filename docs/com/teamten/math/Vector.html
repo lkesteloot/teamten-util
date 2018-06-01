@@ -164,38 +164,38 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#add-com.teamten.math.Vector-">add</a></span>(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</code>
-<div class="block">Return the sum of this and other.</div>
+<div class="block">Adds two vectors.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#cross-com.teamten.math.Vector-">cross</a></span>(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</code>
-<div class="block">Return the cross product between this and other, following the
- right-hand rule.</div>
+<div class="block">Computes a cross product.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#dot-com.teamten.math.Vector-">dot</a></span>(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</code>
-<div class="block">Return the dot product between this and other.</div>
+<div class="block">Computes a dot product.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#get-int-">get</a></span>(int&nbsp;index)</code>
-<div class="block">Returns the element at index (zero-based) without checking bounds.</div>
+<div class="block">Gets an element.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#getSize--">getSize</a></span>()</code>
-<div class="block">Return the number of elements.</div>
+<div class="block">Get the number of elements.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#length--">length</a></span>()</code>
-<div class="block">Return the length of this vector;</div>
+<div class="block">Gets the length of the vector (square root of the sum of the squares of
+ the elements).</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -207,25 +207,25 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#multiply-double-">multiply</a></span>(double&nbsp;constant)</code>
-<div class="block">Return the product between this and a scalar.</div>
+<div class="block">Multiplies a vector and a scalar.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#negate--">negate</a></span>()</code>
-<div class="block">Return the negated vector (-v) of this.</div>
+<div class="block">Negates this vector.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#normalize--">normalize</a></span>()</code>
-<div class="block">Return a normalized (length 1) version of this vector.</div>
+<div class="block">Normalizes a vector.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#subtract-com.teamten.math.Vector-">subtract</a></span>(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</code>
-<div class="block">Return the difference of this and other (this minus other).</div>
+<div class="block">Subtracts two vectors.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -238,7 +238,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <td class="colFirst"><code><a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/teamten/math/Vector.html#with-int-double-">with</a></span>(int&nbsp;index,
     double&nbsp;value)</code>
-<div class="block">Returns a new vector with the specified element replaced.</div>
+<div class="block">Replaces one item of the vector.</div>
 </td>
 </tr>
 </table>
@@ -309,6 +309,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>make</h4>
 <pre>public static&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;make(double...&nbsp;values)</pre>
 <div class="block">Public factory that copies its input array.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>values</code> - the values of the new vector.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a Vector of the passed-in values.</dd>
+</dl>
 </li>
 </ul>
 <a name="get-int-">
@@ -318,7 +324,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;double&nbsp;get(int&nbsp;index)</pre>
-<div class="block">Returns the element at index (zero-based) without checking bounds.</div>
+<div class="block">Gets an element.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - the index (zero-based) to look up.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the element at index.</dd>
+</dl>
 </li>
 </ul>
 <a name="with-int-double-">
@@ -329,7 +341,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <h4>with</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;with(int&nbsp;index,
                    double&nbsp;value)</pre>
-<div class="block">Returns a new vector with the specified element replaced.</div>
+<div class="block">Replaces one item of the vector. Does not change this object.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - the index to replace.</dd>
+<dd><code>value</code> - the new value at index.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a new vector with the specified element replaced.</dd>
+</dl>
 </li>
 </ul>
 <a name="getSize--">
@@ -339,7 +358,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getSize</h4>
 <pre>public&nbsp;int&nbsp;getSize()</pre>
-<div class="block">Return the number of elements.</div>
+<div class="block">Get the number of elements.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of elements.</dd>
+</dl>
 </li>
 </ul>
 <a name="negate--">
@@ -349,7 +372,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>negate</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;negate()</pre>
-<div class="block">Return the negated vector (-v) of this.</div>
+<div class="block">Negates this vector.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the negated vector (-v) of this.</dd>
+</dl>
 </li>
 </ul>
 <a name="add-com.teamten.math.Vector-">
@@ -359,7 +386,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>add</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;add(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</pre>
-<div class="block">Return the sum of this and other.</div>
+<div class="block">Adds two vectors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the vector to add.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the sum of this and other.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the vectors don't have the same length.</dd>
+</dl>
 </li>
 </ul>
 <a name="subtract-com.teamten.math.Vector-">
@@ -369,7 +404,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>subtract</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;subtract(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</pre>
-<div class="block">Return the difference of this and other (this minus other).</div>
+<div class="block">Subtracts two vectors.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the vector to subtract.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the difference of this and other (this minus other).</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the vectors don't have the same length.</dd>
+</dl>
 </li>
 </ul>
 <a name="dot-com.teamten.math.Vector-">
@@ -379,7 +422,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>dot</h4>
 <pre>public&nbsp;double&nbsp;dot(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</pre>
-<div class="block">Return the dot product between this and other.</div>
+<div class="block">Computes a dot product.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the vector to dot with.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the dot product between this and other.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the vectors don't have the same length.</dd>
+</dl>
 </li>
 </ul>
 <a name="cross-com.teamten.math.Vector-">
@@ -389,8 +440,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>cross</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;cross(<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;other)</pre>
-<div class="block">Return the cross product between this and other, following the
- right-hand rule.  The two vectors must be of length 3.</div>
+<div class="block">Computes a cross product. The two vectors must be of length 3.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the vector to cross with.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the cross product between this and other, following the
+ right-hand rule.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the vectors don't have length 3.</dd>
+</dl>
 </li>
 </ul>
 <a name="multiply-double-">
@@ -400,7 +459,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>multiply</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;multiply(double&nbsp;constant)</pre>
-<div class="block">Return the product between this and a scalar.</div>
+<div class="block">Multiplies a vector and a scalar.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>constant</code> - the scalar to multiply by.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the product between this and a scalar.</dd>
+</dl>
 </li>
 </ul>
 <a name="normalize--">
@@ -410,8 +475,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>normalize</h4>
 <pre>public&nbsp;<a href="../../../com/teamten/math/Vector.html" title="class in com.teamten.math">Vector</a>&nbsp;normalize()</pre>
-<div class="block">Return a normalized (length 1) version of this vector.</div>
+<div class="block">Normalizes a vector.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a normalized (length 1) version of this vector.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the vector has length 0.</dd>
 </dl>
@@ -424,7 +491,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>length</h4>
 <pre>public&nbsp;double&nbsp;length()</pre>
-<div class="block">Return the length of this vector;</div>
+<div class="block">Gets the length of the vector (square root of the sum of the squares of
+ the elements).</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the length of this vector.</dd>
+</dl>
 </li>
 </ul>
 <a name="toString--">
