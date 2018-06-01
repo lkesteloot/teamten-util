@@ -25,7 +25,7 @@ import java.util.NoSuchElementException;
 /**
  * Enumerates all combinations of N digits in base B with the restriction that digits are always
  * in strictly increasing order. For example: 0,1,2, then 0,1,3, then 0,1,4, all the way to 7,8,9 for
- * base 10 and three digits.
+ * base 10 and three digits.<p>
  *
  * The number of generated elements is equal to (B-choose-N). For example, with two digits and a base of 100, this
  * iterator would generate 100*99/2 = 4950 elements.

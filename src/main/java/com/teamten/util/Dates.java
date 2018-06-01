@@ -24,7 +24,17 @@ package com.teamten.util;
  * Utility class for dealing with dates and times.
  */
 public class Dates {
+    /**
+     * Number of milliseconds per second.
+     */
     public static final long MS_PER_S = 1000;
+
+    /**
+     * No public constructor.
+     */
+    private Dates() {
+        // Nothing.
+    }
 
     /**
      * Returns a minutes:seconds string for this duration if less than an hour,

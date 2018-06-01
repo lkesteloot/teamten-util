@@ -24,10 +24,16 @@ package com.teamten.math;
  * An immutable object representing a complex number and its operations.
  */
 public class Complex {
+    /**
+     * The Complex value 1.
+     */
     public static final Complex UNITY = new Complex(1, 0);
     private final double mRe;
     private final double mIm;
 
+    /**
+     * Creates an immutable complex number with the specified real and imaginary components.
+     */
     public Complex(double re, double im) {
         mRe = re;
         mIm = im;

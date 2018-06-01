@@ -33,6 +33,13 @@ import java.util.ArrayList;
  */
 public class Files {
     /**
+     * No public constructor.
+     */
+    private Files() {
+        // Nothing.
+    }
+
+    /**
      * Returns a list of lines from the file. Newlines are not included.
      */
     public static List<String> readLines(File file) throws IOException {

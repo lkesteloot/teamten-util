@@ -26,8 +26,17 @@ import java.util.Arrays;
  * Immutable vector class. Represents each element as a double.
  */
 public class Vector {
+    /**
+     * The X axis vector (1,0,0).
+     */
     public static final Vector X = make(1, 0, 0);
+    /**
+     * The Y axis vector (0,1,0).
+     */
     public static final Vector Y = make(0, 1, 0);
+    /**
+     * The Z axis vector (0,0,1).
+     */
     public static final Vector Z = make(0, 0, 1);
     private final double[] mValues;
     private double mLength = -1;

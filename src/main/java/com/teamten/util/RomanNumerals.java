@@ -45,6 +45,13 @@ public class RomanNumerals {
     }
 
     /**
+     * No public constructor.
+     */
+    private RomanNumerals() {
+        // Nothing.
+    }
+
+    /**
      * Converts a number to a Roman numeral in lower case.
      *
      * @throws IllegalArgumentException if the parameter is zero.

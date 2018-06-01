@@ -25,6 +25,12 @@ import java.io.Reader;
  * Utilities for dealing with code points.
  */
 public class CodePoints {
+    /**
+     * No public constructor.
+     */
+    private CodePoints() {
+        // Nothing.
+    }
 
     /**
      * Return the next code point in the reader, or -1 on end of file.

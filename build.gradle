@@ -41,11 +41,7 @@ task docs(type: Javadoc) {
     source = sourceSets.main.allJava
     destinationDir = file('docs')
     options {
-        links "http://docs.oracle.com/javase/8/docs/api"
-
-        // These don't work for some reason:
-        links "http://pdfbox.apache.org/docs/2.0.0/javadocs"
-        links "http://google.github.io/guava/releases/19.0/api/docs"
+        links "https://docs.oracle.com/javase/8/docs/api"
 
         // Noisy in git diffs:
         noTimestamp()
