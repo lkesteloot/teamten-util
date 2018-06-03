@@ -1,5 +1,15 @@
 Utility and math Java library. See the [JavaDoc](https://lkesteloot.github.com/teamten-util).
 
+Available in jcenter:
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile 'com.teamten:teamten-util:1.1'
+    }
+
 # License
 
 Copyright 2018 Lawrence Kesteloot
