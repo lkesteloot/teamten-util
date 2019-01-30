@@ -1,4 +1,4 @@
-Utility and math Java library. See the [JavaDoc](https://lkesteloot.github.com/teamten-util).
+Utility and math Java library. See the [Javadoc](https://lkesteloot.github.com/teamten-util).
 
 Available in jcenter:
 
